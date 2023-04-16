@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <script src="../js/bootstrap.bundle.min.js"></script>
+
+    <link rel="stylesheet" href="./css/index.css">
+    <!-- ../ 상위폴더 ./ 내 현재위치(생략가능) -->
+    <script src="js/index.js" defer></script>
+    <!-- defer > body 읽은 후(전체로딩 후) script 읽기 -->
+
+</head>
+<style>
+    h2 {
+        text-align: center;
+
+
+
+    }
+
+    div {
+        text-align: center;
+    }
+</style>
+
+<body>
+    <h2>개발개발 World</h2>
+    <div style="text-align: center" ;>
+        <img src="../images/갱얼패밀리.jpg" alt="" id="img1"> <br>
+
+       <div class="row mb-5"> 
+        <a href="memberjoin_ex.html"><input type="button" class="btn btn-info btn-lg" value="회원가입" style="width: 100%; color: white;"></a> 
+        <button onclick="goLogin()" class="btn btn-primary btn-lg" >로그인</button>
+        <button onclick="fun1()" class="btn btn-secondary btn-lg">함수호출</button> 
+        </div>
+
+
+
+    </div>
+
+</body>
+<script>
+    const goLogin = () => {
+        location.href = "login.html";
+    }
+</script>
+
+</html>
