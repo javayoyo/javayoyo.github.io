@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>개발개발 World</title>
     <link rel="stylesheet" href="../css/bootstrap.css">
     <script src="../js/bootstrap.bundle.min.js"></script>
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
@@ -29,6 +29,12 @@ body{
         background-color: rgba(255, 255, 255, 0.2);
       }
 
+      #save-bt{
+        width: 700px;
+        height: 100px;
+        font-size: 35px;
+      }
+
       #join-bt{
         text-align: center;
         margin-top: 2%;
@@ -41,9 +47,9 @@ body{
 <body>
     
     <div class="container text-center mt-5" >
-        <button type="button" class="btn btn-outline-dark btn-lg">U・ᴥ・U 회 원 가 입 U・ᴥ・U</button><br>
+        <button type="button" class="btn btn-outline-dark btn-lg" id="save-bt"> U ・ ᴥ ・ U 회   원   가   입 U ・ ᴥ ・ U </button><br>
         <div class="row mt-3">
-        <a href="index.html" style="color: yellow;">index로 이동</a>
+        <a href="index.html" style="color: yellow; font-size: 30px; margin-bottom: 5px;">* index로 이동 *</index></a>
         </div>
         
     </div>
@@ -51,28 +57,28 @@ body{
     <div id="form">
     <div id="save_form" class="container">
         <label for="username">회원계정</label>
-        <input type="text" id="username" name="userName" class="form-control mb-3" onblur="username_check()">
+        <input type="text" id="username" name="userName" class="form-control mb-3" placeholder="✔회원계정 입력" onblur="username_check()">
         <h1 id="username-check-result"></h1>
 
 
         <label for="password">비밀번호</label>
-        <input type="text" id="password" name="password" class="form-control mb-3" onblur="password_check()">
+        <input type="text" id="password" name="password" class="form-control mb-3" placeholder="✔비밀번호 입력" onblur="password_check()">
         <h2 id="password-check-result"></h2>
 
 
         <label for="password_confirm">비밀번호 확인</label>
-        <input type="text" id="password-confirm" name="passwordConfirm" class="form-control mb-3"
+        <input type="text" id="password-confirm" name="passwordConfirm" class="form-control mb-3" placeholder="✔비밀번호 확인"
             onblur="password_confirm()">
         <h3 id="password-confirm-result"></h3>
 
 
         <label for="name">이름</label>
-        <input type="text" id="name" name="name" class="form-control mb-3" onblur="name_check()">
+        <input type="text" id="name" name="name" class="form-control mb-3" placeholder="✔이름 입력" onblur="name_check()">
         <h4 id="name-check-result"></h4>
 
         
         <label for="mobile">전화번호</label>
-        <select name="service_code" id="" class="form-select mb-2">
+        <select name="service_code" id="" class="mb-2">
             <option value="SKT">SKT</option>
             <option value="KT">KT</option>
             <option value="LG">LG</option>
@@ -81,7 +87,7 @@ body{
 
         <div class="row g-2 mb-2">
             <div class="col-8">
-                <input type="text" id="mobile" name="mobile" class="form-control" placeholder="전화번호 입력" onblur="mobile_check()" >
+                <input type="text" id="mobile" name="mobile" class="form-control" placeholder="✔전화번호 입력" onblur="mobile_check()" >
                 <h5 id="mobile-check-result"></h5>
             </div>
 
@@ -90,7 +96,7 @@ body{
         <div class="row mt-3">
         <label for="email">이메일</label>
         </div>
-        <input type="text" id="email-value" name="emailValue"> <span>@</span>
+        <input type="text" id="email-value" name="emailValue" placeholder="✔이메일 입력"> <span>@</span>
         <input type="text" id="email-domain" name="emailDomain">
         <select id="email-domain-select"  onchange="domain_select()">
             <option value="">직접입력</option>
@@ -104,7 +110,8 @@ body{
         <label for="gender">성별</label>
         </div>
         남: <input type="radio" name="gender" value="male">
-        여: <input type="radio" name="gender" value="female">  <br>
+        여: <input type="radio" name="gender" value="female">
+        선택안함: <input type="radio" name="gender" value="none">  <br>
             
         <div class="row mt-3">
         <label for="address">주소</label>
@@ -120,7 +127,7 @@ body{
 
         <div id="join-bt">
             
-                <input type="submit" class="btn btn-outline-success btn-block" value="가입하기" style="width: 900px;">
+                <input type="submit" class="btn btn-outline-success btn-block" value="가 입 하 기" style="width: 900px; font-size: 30px;">
         
         </div>
     </div>
@@ -145,7 +152,6 @@ body{
 
         if (username.length == 0) {
             usernameResult.innerHTML = "필수입력입니다";
-            
             
             usernameResult.style.color = "red";
         } else if (!username.match(exp)) {
@@ -213,7 +219,7 @@ body{
         const exp = /^\d{3}-\d{4}-\d{4}$/;
 
             if(!mobile.match(exp)) {
-                 mobileResult.innerHTML = " ☆ 형식에 맞지 않습니다";
+                 mobileResult.innerHTML = " ☆ 형식에 맞지 않습니다  010-0000-0000";
                  mobileResult.style.color = "red";
 
             }else {
