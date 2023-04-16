@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>개발개발 World</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100&family=Permanent+Marker&family=Press+Start+2P&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <script src="../js/bootstrap.bundle.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
+    </script>
+
+</head>
+<style>
+    h2 {
+        font-family: 'Noto Sans KR', sans-serif;
+        font-family: 'Permanent Marker', cursive;
+        font-family: 'Press Start 2P', cursive;
+        font-size: 300%;
+        margin-top: 100px;
+
+    }
+
+    body {
+        text-align: center;
+    }
+</style>
+
+<body>
+    <h2><i class="bi bi-house-door" style="text-align: center; "></i> 개발개발 World <i class="bi bi-house-door-fill"></i>
+    </h2>
+
+
+
+    <label><i class="bi bi-person-square"></i> 회원계정 : <input id="username" type="text"
+            style="margin-bottom: 30px; margin-top: 30px; font-size: 30px;" placeholder="회원계정"></label> <br>
+    <label><i class="bi bi-file-lock2"></i> 비밀번호 : <input id="password" type="text"
+            style="margin-bottom: 30px; font-size: 30px;" placeholder="비밀번호"></label> <br>
+
+
+    <input type="button" value="로그인" onclick="goMain()" class="btn btn-primary btn-lg"
+        style="width: 500px; margin-bottom: 30px;"> <br>
+    <a href="memberjoin_ex.html"><input type="button" class="btn btn-info btn-lg" value="회원가입"
+            style="width: 500px; color: white; margin-bottom: 20px;"></a> <br>
+
+    <button onclick="goIndex()" class="btn btn-secondary btn-lg" style="width: 500px; margin-bottom: 20px;">index로
+        가기</button><br>
+
+    <img src="../images/발바닥.PNG" alt="" id="img2" style="width: 600px; height: 270px; margin-top: 10px;"> <br>
+
+
+
+</body>
+<script>
+    const goIndex = () => {
+        history.back();
+    }
+    const goMain = () => {
+
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+
+        if(username.length == 0) {
+            alert("회원계정을 입력해주세요 ! ");
+        }else if(password.length == 0) {
+            alert("비밀번호를 입력해주세요 ! ")
+        }
+        else {
+        location.href = "main.html"; }
+    }
+
+</script>
+
+</html>
