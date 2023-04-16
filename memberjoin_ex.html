@@ -13,24 +13,42 @@
 </head>
 
 <style>
-
-body {
-        height: 100vh;
-        width: 100vw;
+body{
+        
+    
         background-image: url("../images/갱얼.jpg");
         background-repeat : no-repeat;
-        background-size : cover;
-        background-color: rgba(255,255,255,0.5);
+        background-size: cover;
+        background-position: center;
+        
+        margin: 0 auto;
         
       }
+
+      #form{
+        background-color: rgba(255, 255, 255, 0.2);
+      }
+
+      #join-bt{
+        text-align: center;
+        margin-top: 2%;
+      }
+
+
+
 </style>
 
 <body>
+    
     <div class="container text-center mt-5" >
-        <h2> U・ᴥ・U 회 원 가 입 U・ᴥ・U </h2>
-        <a href="index.html">index로 이동</a>
+        <button type="button" class="btn btn-outline-dark btn-lg">U・ᴥ・U 회 원 가 입 U・ᴥ・U</button><br>
+        <div class="row mt-3">
+        <a href="index.html" style="color: yellow;">index로 이동</a>
+        </div>
         
     </div>
+
+    <div id="form">
     <div id="save_form" class="container">
         <label for="username">회원계정</label>
         <input type="text" id="username" name="userName" class="form-control mb-3" onblur="username_check()">
@@ -69,8 +87,9 @@ body {
 
         </div>
 
-
+        <div class="row mt-3">
         <label for="email">이메일</label>
+        </div>
         <input type="text" id="email-value" name="emailValue"> <span>@</span>
         <input type="text" id="email-domain" name="emailDomain">
         <select id="email-domain-select"  onchange="domain_select()">
@@ -79,28 +98,33 @@ body {
             <option value="daum.net">다음</option>
             <option value="gmail.com">지메일</option>
         </select> <br>
+        
 
-
+        <div class="row mt-3">
         <label for="gender">성별</label>
+        </div>
         남: <input type="radio" name="gender" value="male">
-        여: <input type="radio" name="gender" value="female"> <br>
-
+        여: <input type="radio" name="gender" value="female">  <br>
+            
+        <div class="row mt-3">
         <label for="address">주소</label>
+        </div>
         <input type="text" id="sample6_postcode" placeholder="우편번호">
         <input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br>
         <input type="text" id="sample6_address" placeholder="주소"><br>
         <input type="text" id="sample6_detailAddress" placeholder="상세주소">
         <input type="text" id="sample6_extraAddress" placeholder="참고항목">
+            
+        </div>
 
 
-
-
-        <div class="row mt-5">
-            <div class="col d-grid">
-                <input type="submit" class="btn btn-outline-success btn-block" value="가입하기">
-            </div>
+        <div id="join-bt">
+            
+                <input type="submit" class="btn btn-outline-success btn-block" value="가입하기" style="width: 900px;">
+        
         </div>
     </div>
+    
 
 </body>
 
@@ -121,9 +145,11 @@ body {
 
         if (username.length == 0) {
             usernameResult.innerHTML = "필수입력입니다";
+            
+            
             usernameResult.style.color = "red";
         } else if (!username.match(exp)) {
-            usernameResult.innerHTML = "5~10자로 입력해주세요";
+            usernameResult.innerHTML = " ☆ 5~10자로 입력해주세요,(영문소문자+숫자 필수)"+"<br>"+" ☆ 특수문자는 -_ 만 가능";
             usernameResult.style.color = "red";
         } else {
             usernameResult.innerHTML = "좋아요";
@@ -143,7 +169,7 @@ body {
             passwordResult.innerHTML = "필수입력입니다";
             passwordResult.style.color = "red";
         } else if (!password.match(exp)) {
-            passwordResult.innerHTML = "6~18자로 입력해주세요";
+            passwordResult.innerHTML = " ☆ 6~18자로 입력해주세요"+"<br>"+" ☆ 영문 대/소문자+숫자 필수"+"<br>"+" ☆ 특수문자 필수(!#$-_)";
             passwordResult.style.color = "red";
         } else {
             passwordResult.innerHTML = "좋아요";
@@ -187,7 +213,7 @@ body {
         const exp = /^\d{3}-\d{4}-\d{4}$/;
 
             if(!mobile.match(exp)) {
-                 mobileResult.innerHTML = "형식에 맞지 않습니다";
+                 mobileResult.innerHTML = " ☆ 형식에 맞지 않습니다";
                  mobileResult.style.color = "red";
 
             }else {
